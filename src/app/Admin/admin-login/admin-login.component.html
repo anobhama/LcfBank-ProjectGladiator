@@ -1,0 +1,45 @@
+<header> 
+    <div class="toolbar" role="banner">
+         <a href="">
+             <img width="70" alt="Bank Logo"
+             src="../../assets/Images/SampLogo.jpeg" /></a>             
+         <!-- <h4 class="p-3 text-center">LCF Bank</h4> -->
+         
+         <div class="spacer">
+            <h3 class="text-center"> <span>Leader's Choice Foundation</span></h3>
+         </div>
+  
+     </div>
+  </header>	
+  <br><br><br><br>
+  <b>							
+    <div class="col-md-6 col-md-offset-2" >											
+      <h3>Admin Login</h3>											
+      <br/>											
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">											
+        <div class="form-group">											
+          <label for="email" >Email Address:</label>											
+          <input type="email" class="form-control" formControlName="email" id="email" size="30">											
+          <div *ngIf="submitted && loginForm.controls.email.errors" class="error">											
+            <div class="text-danger" *ngIf="loginForm.controls.email.errors.required">Email is required</div>											
+          </div>											
+                                                      
+        </div>											
+        <div class="form-group">											
+          <label for="pwd">Password:</label>											
+          <input type="password" class="form-control" formControlName="password" id="pwd">											
+          <div *ngIf="submitted && loginForm.controls.password.errors" class="error">											
+            <div class="text-danger" *ngIf="loginForm.controls.password.errors.required">Password is required</div>											
+          </div>											
+        </div>	
+        <br>		
+        <div class="col-lg-6 login-btm login-button">							
+        <button type="submit" class="btn btn-outline-primary">Login</button> &nbsp; &nbsp;								
+        <br/><br/>											
+        <div *ngIf="invalidLogin" class="error">											
+          <div class="text-danger">Invalid credentials.</div>											
+        </div>
+      </div>											
+      </form>											
+    </div>
+  </b>	

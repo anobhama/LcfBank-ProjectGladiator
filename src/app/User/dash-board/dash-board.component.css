@@ -1,0 +1,16 @@
+@import "../../home/home.component.css";
+
+.box
+{
+  background-color: rgb(218, 214, 214);
+  width: 300px;
+  border: 7px solid rgb(4, 2, 105);
+  padding: 50px;
+  margin: 25px;
+}
+
+.fixedbutton {
+position: fixed;
+bottom: 20%;
+right: 80%; 
+}

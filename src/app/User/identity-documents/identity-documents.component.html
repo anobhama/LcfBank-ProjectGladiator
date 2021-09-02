@@ -1,0 +1,53 @@
+<header> 
+    <div class="toolbar" role="banner">
+         <a href="">
+             <img width="70" alt="Bank Logo"
+                 src="../../../assets/Images/SampLogo.jpeg" /></a>
+               
+         <!-- <h4 class="p-3 text-center">LCF Bank</h4> -->
+         
+         <div class="spacer">
+             <h3 class="text-center"><span class="spacer">Leader's Choice Foundation</span></h3>      
+         </div>
+  
+     </div>
+  </header> 
+  <br><br>
+<body>
+<div class="container">
+    <h1>Identity Documents Form</h1>
+<b>    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+                <label>Aadhar Card</label>
+                <input type="text" class="form-control" formControlName="aadharNumber"
+                    [(ngModel)]="idDoc.aadharNumber" formcontrolname="nameFormControl">
+                <p *ngIf="registerForm.controls.aadharNumber.errors" class="text-danger">This field is required!
+                </p>
+            </div>
+            <div>
+                <label>PAN Card</label>
+                <input type="text" class="form-control" formControlName="pan"
+                    [(ngModel)]="idDoc.pan" formcontrolname="nameFormControl">
+                <p *ngIf="registerForm.controls.pan.errors" class="text-danger">This field is required!
+                </p>
+            </div>
+
+           
+            <button class="btn btn-info my-4 btn-block button" type="submit"><b>Submit</b></button>
+    </form>
+
+</b>
+</div>
+</body>
+<!--
+<footer class="footer">
+    <div class="col-md-14 text-center">
+        <input type="button" value="Contact Us" id="onlineApply"
+            class="btn  float-right text-center login_btn ">
+    </div>
+
+    <div class="col-md-14 text-center">
+        <input type="button" value="About Us" id="onlineApply"
+            class="btn  float-left text-center login_btn ">
+    </div>
+</footer>-->

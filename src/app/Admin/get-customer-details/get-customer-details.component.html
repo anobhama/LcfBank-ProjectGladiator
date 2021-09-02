@@ -1,0 +1,48 @@
+<header> 
+    <div class="toolbar" role="banner">
+         <a href="">
+             <img width="70" alt="Bank Logo"
+             src="../../assets/Images/SampLogo.jpeg" /></a>             
+         <!-- <h4 class="p-3 text-center">LCF Bank</h4> -->
+         
+         <div class="spacer">
+            <h3 class="text-center"><span>Leader's Choice Foundation</span></h3>      
+         </div>
+  
+     </div>
+  </header>
+  <input type="hidden" #selection>
+  <br><br><br>
+    <div class="card-container">
+      <button class="card card-small" (click)="selection.value = 'component'" [routerLink] = "['/admin-home']" tabindex="0">
+          <svg class="icon icon-arrow_back" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+            </svg>
+            <span>Go Back</span>
+      </button></div>
+  <h3 class="p-3 text-center">
+     Customer - {{customerDetailsObj.customerId}}
+    </h3>
+    <div class="container">
+      <div>
+        <input type="text" [(ngModel)]="customerId" size="10" />
+    
+        <button (click)="onSearch()" >Search</button>
+      </div>
+      <table [hidden] = "!isList"class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Customer Id</th>
+            <th>Customer Name</th>
+            <th>DOB</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ customerDetailsObj.customerId }}</td>
+            <td>{{ customerDetailsObj.customerName }}</td>
+            <td>{{ customerDetailsObj.dob }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>

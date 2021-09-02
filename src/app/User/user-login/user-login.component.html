@@ -1,0 +1,69 @@
+<header> 
+    <div class="toolbar" role="banner">
+         <a href="">
+             <img width="70" alt="Bank Logo"
+                 src="../../../assets/Images/SampLogo.jpeg" /></a>
+               
+         <!-- <h4 class="p-3 text-center">Welcome</h4> -->
+         
+         <div class="spacer">
+             <h3 class = "text-center"> <span class="spacer">Leader's Choice Foundation</span> </h3>      
+         </div>
+  
+     </div>
+</header>
+
+<body>
+
+  <br /><br />
+  <div class="col-md-6 col-md-offset-2 text-center" style="text-align:center">
+    <b>
+      <h1 class="loginColour" style="text-align:center">Login to your Account</h1>
+    </b>
+    <br />
+    <div class="form-background">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <div class="login-page">
+            <div class="login-header">
+              <b><label>Customer Id</label></b>
+              <input type="text" class="form-control" formControlName="customerId" [(ngModel)]="loginObj.customerId"
+                formcontrolname="nameFormControl">
+              <p *ngIf="loginForm.controls.customerId.errors" class="alert alert-danger">This field is required!</p>
+            </div>
+          </div>
+
+          <div class="login-page">
+            <b> <label>Password </label> </b>
+            <input type="password" class="form-control" formControlName="loginPassword"
+              [(ngModel)]="loginObj.loginPassword" formcontrolname="nameFormControl">
+            <p *ngIf="loginForm.controls.loginPassword.errors" class="alert alert-danger">This field is required!</p>
+          </div>
+        </div>
+        <b> <button class="btn btn-info my-4 btn-block  button " type="submit"><b>Login</b></button></b>
+
+        <div class="d-flex justify-content-center links">
+          First Time User ?<a href="#">Register</a>
+        </div>
+        <div class="d-flex justify-content-center links">
+          <a href="#" [routerLink]="['']">Forgot your password?</a>
+        </div>
+        <div class="d-flex justify-content-center links">
+          <a href="#" [routerLink]="['']">Register for Net Banking </a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</body>
+<br>
+<footer class="footer">
+  <div class="col-md-14 text-center">
+    <input type="button" value="Contact Us" id="onlineApply" class="btn  float-right text-center login_btn ">
+  </div>
+
+  <div class="col-md-14 text-center">
+    <input type="button" value="About Us" id="onlineApply" class="btn  float-left text-center login_btn ">
+  </div>
+</footer>

@@ -1,0 +1,89 @@
+<header> 
+    <div class="toolbar" role="banner">
+         <a href="">
+             <img width="70" alt="Bank Logo"
+             src="../../../assets/Images/SampLogo.jpeg" /></a>
+               
+         <!-- <h4 class="p-3 text-center">LCF Bank</h4> -->
+         
+         <div class="spacer">
+             <h3 class="text-center"><span class="spacer">Leader's Choice Foundation</span></h3>
+         </div>
+  
+     </div>
+  </header> 
+
+<br><br>
+
+<body>
+    <div class="container">   
+         <h1>Address Details</h1>
+<b>    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+                <label>Address Line 1</label>
+                <input type="text" class="form-control" formControlName="addressLine1"
+                    [(ngModel)]="address.addressLine1" formcontrolname="nameFormControl">
+                <p *ngIf="registerForm.controls.addressLine1.errors" class="text-danger">This field is required!
+                </p>
+            </div>
+            <div>
+                <label>Address Line 2</label>
+                <input type="text" class="form-control" formControlName="addressLine2"
+                    [(ngModel)]="address.addressLine2" formcontrolname="nameFormControl">
+                <p *ngIf="registerForm.controls.addressLine2.errors" class="text-danger">This field is required!
+                </p>
+            </div>
+
+            <div>
+                <label>Landmark</label>
+                <input type="text" class="form-control" formControlName="landmark"
+                    [(ngModel)]="address.landmark" formcontrolname="nameFormControl">
+                <p *ngIf="registerForm.controls.landmark.errors" class="text-danger">This field is required!
+                </p>
+            </div>
+
+            <div>
+                <label>City</label>
+                <input type="text" class="form-control" formControlName="city"
+                    [(ngModel)]="address.city" formcontrolname="nameFormControl">
+                <p *ngIf="registerForm.controls.city.errors" class="text-danger">This field is required!
+                </p>
+            </div>
+
+
+            <div>
+                <label for="state">State </label>
+                <select formControlName="state" class="form-control" (change)="changeState($event)" [(ngModel)]="address.state" formcontrolname="nameFormControl">
+                    <option disabled> Select State</option>
+                    <option>Choose State</option>
+                    <option *ngFor="let state of stateList">{{state}}</option>
+                </select>
+            </div>
+
+
+            <div>
+                <label>Pincode</label>
+                <input type="text" class="form-control" formControlName="pinCode"
+                    [(ngModel)]="address.pinCode" formcontrolname="nameFormControl">
+                <p *ngIf="registerForm.controls.pinCode.errors" class="text-danger">This field is required!
+                </p>
+            </div>
+
+           
+            <button class="btn btn-info my-4 btn-block button" type="submit"><b>Next</b></button>
+    </form>
+</b>
+</div>
+
+</body>
+<footer class="footer">
+    <div class="col-md-14 text-center">
+        <input type="button" value="Contact Us" id="onlineApply"
+            class="btn  float-right text-center login_btn ">
+    </div>
+
+    <div class="col-md-14 text-center">
+        <input type="button" value="About Us" id="onlineApply"
+            class="btn  float-left text-center login_btn ">
+    </div>
+</footer>

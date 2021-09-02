@@ -1,0 +1,120 @@
+<header> 
+    <div class="toolbar" role="banner">
+         <a href="">
+             <img width="70" alt="Bank Logo"
+             src="../../assets/Images/SampLogo.jpeg" /></a>             
+         <!-- <h4 class="p-3 text-center">LCF Bank</h4> -->
+         
+         <div class="spacer">
+             <h3 class="text-center"><span class="spacer">Leader's Choice Foundation</span></h3>
+         </div>
+  
+     </div>
+  </header> 
+  
+  <body>
+    <b>
+        <!-- <h1 class="text-center bold" class="font-weight-bold ">Welcome {{customerObj.customerName}}</h1> -->
+        <nav class="navbar navbar-light bg-light p-3">
+            <div class="dropdown">
+                <button class="btn btn-secondary button" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-expanded="false" [routerLink]="['/dashBoard']">
+                    Home
+                </button>
+  
+            </div>
+  
+            <div class="dropdown">
+                <button class="btn btn-secondary button" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-expanded="false" [routerLink]="['/dashBoard']">
+                    User Profile
+                </button>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary button" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-expanded="false" [routerLink]="['dashBoard']">
+                    Transaction History
+                </button>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary button" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-expanded="false">
+                    Reset Password
+                </button>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary button" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-expanded="false">
+                    Help
+                </button>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary button" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-expanded="false" [routerLink]="['']">
+                    Log out
+                </button>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                    <!-- sidebar content goes in here -->
+                </nav>
+            </div>
+        </div>
+  
+  <div class="container">
+      <h1>Funds Transfer</h1>
+      <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+  
+        <div class="form-group">
+          <label>Account Holder Name</label>
+          <input type="text" class="form-control" placeholder="Account Holder" formControlName="beneficiaryAccountInfo" [(ngModel)]="transactionObj.beneficiaryAccountInfo" formcontrolname="nameFormControl"/>
+          <p *ngIf="transactionForm.controls.beneficiaryAccountInfo.errors"class="text-danger">This field is required!</p>
+        </div>
+        
+        <div class="form-group">
+          <label>From Account Number </label>
+          <input type="number" class="form-control" formControlName="benefactorAccNumber" [(ngModel)]="transactionObj.benefactorAccNumber" formcontrolname="nameFormControl"/>
+          <p *ngIf="transactionForm.controls.benefactorAccNumber.errors" class="text-danger">This field is required!</p>
+        </div>
+  
+        <div class="form-group">
+                <label> To Account Number</label> 
+                <input type="number" class="form-control" formControlName="beneficiaryAccNumber" [(ngModel)]="transactionObj.beneficiaryAccNumber" formcontrolname="nameFormControl"/>
+                <p *ngIf="transactionForm.controls.beneficiaryAccNumber.errors" class="text-danger">This field is required</p>
+            </div>
+  
+           
+            <div class="form-group">
+              <label>Amount</label>
+              <input type="number" class="form-control" formControlName="amount" [(ngModel)]="transactionObj.amount" formcontrolname="nameFormControl"/>
+              <p *ngIf="transactionForm.controls.amount.errors" class="text-danger">This field is required!</p>
+            </div>
+  
+            <div>
+              <label >Payment Mode  </label>
+              <select formControlName="modeOfTransaction" class="form-control" (change)="paymentMode($event)" [(ngModel)]="transactionObj.modeOfTransaction" formcontrolname="nameFormControl">
+                  <option > Payment Mode  </option>
+                  <option *ngFor="let payment of paymentModeList">{{payment}}</option>
+              </select>
+          </div>
+          
+          <div class="form-group">
+            <label>Remarks</label>
+            <input type="text" class="form-control" formControlName="remarks" [(ngModel)]="transactionObj.remarks" formcontrolname="nameFormControl"/>        </div>
+  
+  
+          <div class="form-group">
+            <label>Transaction Pin </label>
+            <input type="password" class="form-control" formControlName="transactionId" [(ngModel)]="transactionObj.transactionId" formcontrolname="nameFormControl"/>
+            <p *ngIf="transactionForm.controls.transactionId.errors" class="text-danger">This field is required!</p>
+          </div>
+          <div class="col-lg-6 login-btm login-button">
+            <button class="btn btn-outline-primary" type="submit">Next</button>
+          </div>
+      </form>
+    <br/>
+      <div [hidden]="!submitted">
+      </div>
+    </div> 
